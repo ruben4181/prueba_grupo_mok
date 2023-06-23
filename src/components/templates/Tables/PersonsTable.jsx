@@ -66,6 +66,10 @@ const PersonsTable = ({ search, stripped, sortByCountry, restoreData }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortByCountry]);
 
+  const handleOnGoEndClicked = (e) => {
+    scrollToRef();
+  };
+
   return (
     <>
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 table-fixed">
@@ -82,18 +86,14 @@ const PersonsTable = ({ search, stripped, sortByCountry, restoreData }) => {
           ]}
         />
       </table>
-      {!isIntersecting ? (
+      {!isIntersecting && (
         <div className="fixed bottom-0 left-0 right-0 w-full flex justify-center">
           <RoundedButton
             options={{ text: "Ir al final" }}
             className="mb-8"
-            onClick={() => {
-              scrollToRef();
-            }}
+            onClick={handleOnGoEndClicked}
           />
         </div>
-      ) : (
-        <></>
       )}
     </>
   );

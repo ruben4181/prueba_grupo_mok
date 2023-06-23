@@ -1,3 +1,6 @@
+//Código ejemplo de Spinner tomado de la documentación oficial de TailWind CSS
+//Modificado para que tuviera texto y este estuviese en español
+
 export default function DefaultSpinner() {
   return (
     <div role="status" className="flex justify-center items-center pt-12">

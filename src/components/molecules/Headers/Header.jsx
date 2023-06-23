@@ -8,6 +8,18 @@ export default function Header({
   setRestoreData,
   search,
 }) {
+  const handleStrippedClicked = (e) => {
+    switchStripped();
+  };
+
+  const handleSortByCountryClicked = (e) => {
+    setSortByCountry();
+  };
+
+  const handleRestoreState = (e) => {
+    setRestoreData();
+  };
+
   return (
     <div className="justify-center flex mt-8">
       <DefaultButton
@@ -15,22 +27,16 @@ export default function Header({
           text: stripped ? "Filas sin colorear" : "Colorear filas",
         }}
         className="me-3"
-        onClick={(e) => {
-          switchStripped();
-        }}
+        onClick={handleStrippedClicked}
       />
       <DefaultButton
         options={{ text: "Ordenar por país" }}
         className="me-3"
-        onClick={() => {
-          setSortByCountry();
-        }}
+        onClick={handleSortByCountryClicked}
       />
       <DefaultButton
         options={{ text: "Restaurar estado inicial" }}
-        onClick={() => {
-          setRestoreData();
-        }}
+        onClick={handleRestoreState}
         className="me-3"
       />
       <SearchInput

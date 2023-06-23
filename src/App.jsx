@@ -12,6 +12,18 @@ function App() {
   const [sortByCountry, setSortByCountry] = useState(1);
   const [restoreData, setRestoreData] = useState(1);
 
+  const handleStrippedClicked = (e) => {
+    setStripped(!stripped);
+  };
+  const handleSortByCountryClicked = (e) => {
+    setSortByCountry(sortByCountry + 1);
+  };
+
+  const handleRestoreState = (e) => {
+    setSearch("");
+    setRestoreData(restoreData + 1);
+  };
+
   return (
     <div className="min-h-screen mx-auto bg-gray-50 dark:bg-neutral-900">
       <div className="pt-8">
@@ -22,18 +34,11 @@ function App() {
       <header>
         <Header
           setSearch={setSearch}
-          switchStripped={() => {
-            setStripped(!stripped);
-          }}
+          switchStripped={handleStrippedClicked}
           stripped={stripped}
-          setSortByCountry={() => {
-            setSortByCountry(sortByCountry + 1);
-          }}
+          setSortByCountry={handleSortByCountryClicked}
           search={search}
-          setRestoreData={() => {
-            setSearch("");
-            setRestoreData(restoreData + 1);
-          }}
+          setRestoreData={handleRestoreState}
         />
       </header>
       <main className="me-2 ms-2">

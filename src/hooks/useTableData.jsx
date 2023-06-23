@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 
+//Este Hook sirve para llevar las funciones básicas de
+//Una tabla en una lógica abstraida, con el fin de que
+//Se pueda reutilizar en diferentes partes del proyecto
+
 const useTableData = (url, parseData) => {
   const [tableData, setTableData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
