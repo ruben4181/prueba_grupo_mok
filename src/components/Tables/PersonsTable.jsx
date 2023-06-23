@@ -13,6 +13,24 @@ const columns = [
   { label: "Acciones", value: "id" },
 ];
 
+const personsNumber = 100;
+const url = "https://randomuser.me/api/?results=" + personsNumber;
+
+const parseData = (data) => {
+  let items = [];
+  for (let i = 0; i < data.length; i++) {
+    let d = data[i];
+    let item = {};
+    item["id"] = i;
+    item["name"] = d.name.first;
+    item["lastname"] = d.name.last;
+    item["imgUrl"] = "foto"; //d.picture.thumbnail;
+    item["country"] = d.location.country;
+    items.push(item);
+  }
+  return items;
+};
+
 const PersonsTable = ({ search, stripped, sortByCountry, restoreData }) => {
   const {
     tableData,
@@ -20,7 +38,7 @@ const PersonsTable = ({ search, stripped, sortByCountry, restoreData }) => {
     orderByColumn,
     restoreTableData,
     removeItem,
-  } = useTableData(100);
+  } = useTableData(url, parseData);
 
   const { targetRef, isIntersecting } = useIntersectionObserver({});
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useTableData = (personsNumber = 100) => {
+const useTableData = (url, parseData) => {
   const [tableData, setTableData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [removedItems, setRemoveItems] = useState([]);
@@ -8,9 +8,7 @@ const useTableData = (personsNumber = 100) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://randomuser.me/api/?results=" + personsNumber
-        );
+        const response = await fetch(url);
         const data = await response.json();
         let parsedData = parseData(data.results);
         setTableData(parsedData);
@@ -20,22 +18,7 @@ const useTableData = (personsNumber = 100) => {
       }
     };
     fetchData();
-  }, [personsNumber]);
-
-  const parseData = (data) => {
-    let items = [];
-    for (let i = 0; i < data.length; i++) {
-      let d = data[i];
-      let item = {};
-      item["id"] = i;
-      item["name"] = d.name.first;
-      item["lastname"] = d.name.last;
-      item["imgUrl"] = "foto"; //d.picture.thumbnail;
-      item["country"] = d.location.country;
-      items.push(item);
-    }
-    return items;
-  };
+  }, [url, parseData]);
 
   const filterByColumn = (column, q) => {
     if (q && q !== "") {
