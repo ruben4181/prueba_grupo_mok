@@ -1,14 +1,16 @@
 import React, { lazy, Suspense, useState } from "react";
-import Header from "./components/Header";
-import DefaultSpinner from "./components/Fallbacks/DefaultSpinner";
+import Header from "./components/molecules/Headers/Header";
+import DefaultSpinner from "./fallbacks/DefaultSpinner";
 
-const PersonsTable = lazy(() => import("./components/Tables/PersonsTable"));
+const PersonsTable = lazy(() =>
+  import("./components/templates/Tables/PersonsTable")
+);
 
 function App() {
   const [search, setSearch] = useState("");
   const [stripped, setStripped] = useState(false);
-  const [sortByCountry, setSortByCountry] = useState(false);
-  const [restoreData, setRestoreData] = useState(0);
+  const [sortByCountry, setSortByCountry] = useState(1);
+  const [restoreData, setRestoreData] = useState(1);
 
   return (
     <div className="min-h-screen mx-auto bg-gray-50 dark:bg-neutral-900">
@@ -25,7 +27,7 @@ function App() {
           }}
           stripped={stripped}
           setSortByCountry={() => {
-            setSortByCountry(!sortByCountry);
+            setSortByCountry(sortByCountry + 1);
           }}
           search={search}
           setRestoreData={() => {
@@ -34,7 +36,7 @@ function App() {
           }}
         />
       </header>
-      <main>
+      <main className="me-2 ms-2">
         <Suspense fallback={<DefaultSpinner />}>
           <PersonsTable
             search={search}

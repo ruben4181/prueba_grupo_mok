@@ -1,8 +1,8 @@
-import DefaultButton from "../Buttons/DefaultButton";
+import DefaultButton from "../../atoms/Buttons/DefaultButton";
 
 export default function ActionsCell({ actions, id }) {
   return (
-    <td className="flex justify-center pt-3 pb-3">
+    <td className="text-black dark:text-white text-center">
       {actions.map((action, index) => (
         <DefaultButton
           key={"btn-" + id + "-" + action.label}

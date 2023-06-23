@@ -1,7 +1,6 @@
-import DefaultButton from "./Buttons/DefaultButton";
-import SearchInput from "./Inputs/SearchInput";
+import DefaultButton from "../../atoms/Buttons/DefaultButton";
+import SearchInput from "../../atoms/Inputs/SearchInput";
 export default function Header({
-  options,
   setSearch,
   switchStripped,
   stripped,

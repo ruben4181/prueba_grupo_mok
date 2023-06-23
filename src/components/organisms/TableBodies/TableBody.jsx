@@ -10,7 +10,7 @@ export default function TableBody({ data, strippedRow, actions, targetRef }) {
           lastname={row.lastname}
           country={row.country}
           className={
-            row.className +
+            "mt-3 mb-3" +
             (strippedRow
               ? index % 2 === 0
                 ? " bg-white dark:bg-[#112233]"

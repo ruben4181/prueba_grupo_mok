@@ -1,8 +1,8 @@
-import TableHeader from "../TableHeaders/TableHeader";
-import useTableData from "../../hooks/useTableData";
-import TableBody from "../TableBodies/TableBody";
-import RoundedButton from "../Buttons/RoundedButton";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import TableHeader from "../../organisms/TableHeaders/TableHeader";
+import useTableData from "../../../hooks/useTableData";
+import TableBody from "../../organisms/TableBodies/TableBody";
+import RoundedButton from "../../atoms/Buttons/RoundedButton";
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import { useEffect } from "react";
 
 const columns = [
@@ -24,7 +24,7 @@ const parseData = (data) => {
     item["id"] = i;
     item["name"] = d.name.first;
     item["lastname"] = d.name.last;
-    item["imgUrl"] = "foto"; //d.picture.thumbnail;
+    item["imgUrl"] = d.picture.thumbnail;
     item["country"] = d.location.country;
     items.push(item);
   }

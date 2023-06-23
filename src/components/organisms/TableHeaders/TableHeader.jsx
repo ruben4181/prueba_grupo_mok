@@ -1,4 +1,4 @@
-import DefaultHeaderCell from "../TableCells/DefaultHeaderCell";
+import DefaultHeaderCell from "../../atoms/TableCells/DefaultHeaderCell";
 
 export default function TableHeader({ columns, orderByColumn }) {
   return (
