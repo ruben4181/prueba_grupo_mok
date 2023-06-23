@@ -19,9 +19,9 @@ Teniendo en cuenta el aspecto visual y de U/X se realizaron las siguientes mejor
 
 El proyecto solo hace uso de la librería externa Tailwind CSS, la cual ya está en el package.json, por lo que para levantar el proyecto basta con clonarlo y ejecutar
 
-`https://github.com/ruben4181/prueba_grupo_mok.git`
-`cd prueba_grupo_mok`
-`npm install`
+`https://github.com/ruben4181/prueba_grupo_mok.git`  
+`cd prueba_grupo_mok`  
+`npm install`  
 
 Para levantar en modo desarrollo
 `npm start`
