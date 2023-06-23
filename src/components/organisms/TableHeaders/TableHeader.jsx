@@ -9,7 +9,9 @@ export default function TableHeader({ columns, orderByColumn }) {
             value={col.label}
             key={index + "-dfh"}
             onClick={() => {
-              orderByColumn(col.value, true);
+              if (!["imgSrc", "id"].includes(col.value)) {
+                orderByColumn(col.value, true);
+              }
             }}
           />
         ))}
