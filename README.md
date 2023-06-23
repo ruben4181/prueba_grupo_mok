@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Prueba Desarrollador Frontend - Grupo Mok
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Mejoras
 
-## Available Scripts
+Teniendo en cuenta la información de las tecnologías usadas, por Grupo Mok, en sus desarrollos se realizaron las siguientes consideraciones:
 
-In the project directory, you can run:
+- Investigar y usar la metodología Atomic Design
+- Usar la librería Tailwind CSS para el maquetado y estilos de la interfaz gráfica.
+- Uso de Lazy Loading en el componente más grande y "pesado", la tabla de usuarios, con un fallback para reducir el TTI y CLP.
 
-### `npm start`
+Teniendo en cuenta el aspecto visual y de U/X se realizaron las siguientes mejoras:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Selección de colores para el tema oscuro y tema claro del Sistema Operativo, mediante la etiqueta **dark:** de Tailwind, para una mejor experiencia de usuario con respecto a la configuración del tema de su Sistema Operativo.
+- Adición del botón flotante **Ir al final**, que le sirve al usuario para saber que hay más datos por leer en la tabla y para desplazarse hasta la última fila de la tabla cuando se da click en este botón. El botón aparece y desaparece según la última fila de la tabla esté o no esté en el ViewPort. Para saber si la última fila está siendo visualizada en el ViewPort se hace uso de un Custom Hook con la lógica principal del Interception Observer, con el fin de que pueda ser reusado en diferentes partes del proyecto de ser necesario.
+- Colorear, las filas de la tabla de usuario, con los colores **#112233** y **#556677**, solamente para el tema oscuro, y con los colores **bg-white** y **bg-slate-100** para el tema claro, esto para no generar un contraste excesivo que puede resultar visualmente molesto para el usuario o disruptivo con respecto al tema del Sistema Operativo.
+- Diseño reponsive en la sección de botones para mejorar la visualización en dispositivos con pantallas más pequeñas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Levantamiento del proyecto
 
-### `npm test`
+El proyecto solo hace uso de la librería externa Tailwind CSS, la cual ya está en el package.json, por lo que para levantar el proyecto basta con clonarlo y ejecutar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`https://github.com/ruben4181/prueba_grupo_mok.git`
+`cd prueba_grupo_mok`
+`npm install`
 
-### `npm run build`
+Para levantar en modo desarrollo
+`npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para levantar el proyecto minificado y compilado, listo para producción
+`npm install -g serve`
+`npm run build`
+`serve -s build`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Ruta de prueba pública
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+También se puede revisar el proyecto corriendo, en Google Cloud, se puede acceder a la siguiente ruta, donde ya se realizó el despliegue:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Ruta de prueba Google Cloud](http://34.125.8.183/)
