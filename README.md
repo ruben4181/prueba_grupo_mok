@@ -13,7 +13,6 @@ Teniendo en cuenta el aspecto visual y de U/X se realizaron las siguientes mejor
 - Selección de colores para el tema oscuro y tema claro del Sistema Operativo, mediante la etiqueta **dark:** de Tailwind, para una mejor experiencia de usuario con respecto a la configuración del tema de su Sistema Operativo.
 - Adición del botón flotante **Ir al final**, que le sirve al usuario para saber que hay más datos por leer en la tabla y para desplazarse hasta la última fila de la tabla cuando se da click en este botón. El botón aparece y desaparece según la última fila de la tabla esté o no esté en el ViewPort. Para saber si la última fila está siendo visualizada en el ViewPort se hace uso de un Custom Hook con la lógica principal del Interception Observer, con el fin de que pueda ser reusado en diferentes partes del proyecto de ser necesario.
 - Colorear, las filas de la tabla de usuario, con los colores **#112233** y **#556677**, solamente para el tema oscuro, y con los colores **bg-white** y **bg-slate-100** para el tema claro, esto para no generar un contraste excesivo que puede resultar visualmente molesto para el usuario o disruptivo con respecto al tema del Sistema Operativo.
-- Diseño reponsive en la sección de botones para mejorar la visualización en dispositivos con pantallas más pequeñas.
 
 ## Levantamiento del proyecto
 
