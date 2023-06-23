@@ -26,7 +26,7 @@ El proyecto solo hace uso de la librería externa Tailwind CSS, la cual ya está
 Para levantar en modo desarrollo  
 `npm start`  
 
-Para levantar el proyecto minificado y compilado, listo para producción
+Para levantar el proyecto minificado y compilado, listo para producción  
 `npm install -g serve`    
 `npm run build`    
 `serve -s build`    
